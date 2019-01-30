@@ -11,6 +11,7 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?/,
+        include: path.join(__dirname, '/client'),
         use: {
           loader: 'babel-loader',
           options: {
