@@ -3,8 +3,8 @@ import Event from './Event.jsx';
 
 const EventList = ({ events }) => (
   <div className="list">
-    {events.map((event) => (
-      <Event event={event} />
+    {events.map((event, idx) => (
+      <Event event={event} key={idx} />
     ))}
   </div>
 );
