@@ -1,8 +1,11 @@
 import React from 'react';
+import Event from './Event.jsx';
 
-const EventList = () => (
-  <div>
-    
+const EventList = ({ events }) => (
+  <div className="list">
+    {events.map((event) => (
+      <Event event={event} />
+    ))}
   </div>
 );
 

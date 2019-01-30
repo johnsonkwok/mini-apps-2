@@ -10,13 +10,28 @@ class App extends React.Component {
       events: [],
       query: ''
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    fetch('/events?_page=1&_limit=10')
+      .then(res => res.json())
+      .then((events) => {
+        this.setState({ events });
+      })
+      .catch(err => console.error(err));
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+
   }
 
   render() {
     return (
       <div>
         <Search />
-        <EventList />
+        <EventList events={this.state.events} />
         
       </div>
     );
