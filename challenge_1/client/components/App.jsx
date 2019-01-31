@@ -63,26 +63,33 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Search updateQuery={this.updateQuery} handleSubmit={this.handleSubmit} />
+        <nav className="navbar-header sticky-top">
+          <div className="space-btwn">
+            <div className="title">Historical Events Finder</div>
+            <Search updateQuery={this.updateQuery} handleSubmit={this.handleSubmit} />
+          </div>
+        </nav>
         <EventList events={this.state.events} />
-        <nav>
-          <ReactPaginate
-            previousLabel={'previous'}
-            nextLabel={'next'}
-            breakLabel={'...'}
-            pageCount={this.state.pageCount}
-            marginPagesDisplayed={2}
-            pageRangeDisplayed={5}
-            onPageChange={this.handlePageClick}
-            forcePage={this.state.pageNum - 1}
-            containerClassName={'pagination'}
-            pageClassName={'page-item'}
-            pageLinkClassName={'page-link'}
-            previousLinkClassName={'page-link'}
-            nextLinkClassName={'page-link'}
-            breakLinkClassName={'page-link'}
-            activeClassName={'active'}
-          />
+        <nav className="fixed-bottom">
+          <div className="centered">
+            <ReactPaginate
+              previousLabel={'previous'}
+              nextLabel={'next'}
+              breakLabel={'...'}
+              pageCount={this.state.pageCount}
+              marginPagesDisplayed={2}
+              pageRangeDisplayed={5}
+              onPageChange={this.handlePageClick}
+              forcePage={this.state.pageNum - 1}
+              containerClassName={'pagination'}
+              pageClassName={'page-item'}
+              pageLinkClassName={'page-link'}
+              previousLinkClassName={'page-link'}
+              nextLinkClassName={'page-link'}
+              breakLinkClassName={'page-link'}
+              activeClassName={'active'}
+            />
+          </div>
         </nav>
       </div>
     );

@@ -1,3 +1,26 @@
+.navbar-header {
+  background-color: lightblue;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-bottom: 10px;
+  padding-left: 30px;
+  padding-top: 20px;
+  height: 70px;
+}
+
+.title {
+  font-size: 2em;
+}
+
 .event {
   margin: 15px 0;
+}
+
+.space-btwn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
 }
