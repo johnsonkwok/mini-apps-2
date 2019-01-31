@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Chart from './components/Chart';
+import Chart from './Chart';
 
 class App extends Component {
   constructor(props) {
@@ -12,8 +12,8 @@ class App extends Component {
   componentDidMount() {
     fetch('/bpi')
       .then(res => res.json())
-      .then((data) => {
-        this.setState({ data });
+      .then((chartData) => {
+        this.setState({ chartData: chartData.bpi });
       })
       .catch((err) => {
         console.error(err);
