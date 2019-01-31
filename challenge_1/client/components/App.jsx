@@ -16,6 +16,7 @@ class App extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateQuery = this.updateQuery.bind(this);
+    this.goHome = this.goHome.bind(this);
     this.handlePageClick = this.handlePageClick.bind(this);
   }
 
@@ -53,6 +54,15 @@ class App extends React.Component {
     });
   }
 
+  goHome() {
+    this.setState({
+      query: '',
+      pageNum: 1
+    }, () => {
+      this.loadEventsFromServer();
+    });
+  }
+
   handlePageClick(data) {
     let pageNum = data.selected + 1;
     this.setState({ pageNum }, () => {
@@ -63,14 +73,16 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <nav className="navbar-header sticky-top">
+        <nav className="navbar-header sticky-top shadow-sm">
           <div className="space-btwn">
-            <div className="title">Historical Events Finder</div>
-            <Search updateQuery={this.updateQuery} handleSubmit={this.handleSubmit} />
+            <button className="title" onClick={this.goHome}>
+              Historical Events Finder
+            </button>
+            <Search updateQuery={this.updateQuery} handleSubmit={this.handleSubmit} query={this.state.query} />
           </div>
         </nav>
         <EventList events={this.state.events} />
-        <nav className="fixed-bottom">
+        <nav className="page-bar fixed-bottom">
           <div className="centered">
             <ReactPaginate
               previousLabel={'previous'}

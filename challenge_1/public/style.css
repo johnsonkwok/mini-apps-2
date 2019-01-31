@@ -9,10 +9,21 @@
 
 .title {
   font-size: 2em;
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	outline: inherit;
 }
 
 .event {
-  margin: 15px 0;
+  margin: 15px 60px;
+  max-width: 1200px;
+}
+
+.page-bar {
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
 .space-btwn {
