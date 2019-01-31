@@ -8,14 +8,14 @@ const Chart = ({ chartData }) => {
     maintainAspectRatio: false,
     scales: {
       xAxes: [{
-        display: true,
-        labelString: 'Dates'
-      }],
+        scaleLabel: {
+          display: true,
+          labelString: 'Dates'
+      }}],
       yAxes: [{
-        ticks: {
-          callback: (value) => {
-            return '$' + value;
-          }
+        scaleLabel: {
+          display: true,
+          labelString: 'Closing Price ($)'
         }
       }]
     }
