@@ -1,0 +1,37 @@
+.navbar-header {
+  background-color: lightblue;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-bottom: 10px;
+  padding-left: 30px;
+  padding-top: 20px;
+  height: 70px;
+}
+
+.title {
+  font-size: 2em;
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.event {
+  margin: 15px 60px;
+  max-width: 1200px;
+}
+
+.page-bar {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.space-btwn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+}
