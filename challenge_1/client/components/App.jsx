@@ -3,7 +3,6 @@ import Search from './Search.jsx';
 import EventList from './EventList.jsx';
 import ReactPaginate from 'react-paginate';
 import axios from 'axios';
-import url from 'url';
 
 class App extends React.Component {
   constructor(props) {
@@ -25,13 +24,8 @@ class App extends React.Component {
       .then(res => {
         const pageCount = Math.ceil(res.headers['x-total-count'] / 10);
         const events = res.data;
-        // const parsedUrl = url.parse(res.headers.link.split(';')[0].slice(1, -1));
-        // let previousQuery = parsedUrl.query.substring(2, parsedUrl.query.indexOf('&'));;
         this.setState({ events, pageCount });
       })
-      // .then(() => {
-      //   this.setState({ query: '' });
-      // })
       .catch(err => console.error(err));
   }
 
