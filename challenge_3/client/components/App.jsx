@@ -22,6 +22,7 @@ class App extends Component {
       },
       totalScore: 0,
       currentPinsLeft: 10,
+      errorMsg: false,
       gameComplete: false
     };
     this.addPoints = this.addPoints.bind(this);
@@ -31,7 +32,14 @@ class App extends Component {
     const numPinsHit = Number(e.target.value);
 
     if (numPinsHit > this.state.currentPinsLeft) {
-      alert('Please choose a valid number of pins hit.');
+      this.setState({
+        errorMsg: true
+      });
+      setTimeout(() => {
+        this.setState({
+          errorMsg: false
+        });
+      }, 3000);
       return;
     }
 
@@ -88,7 +96,9 @@ class App extends Component {
     return (
       <div>
         <Keypad addPoints={this.addPoints} />
+        {this.state.errorMsg ? <h3>Please choose a valid number of pins hit.</h3> : null}
         <Scorecard score={this.state.score} totalScore={this.state.totalScore} />
+        {this.state.gameComplete ? <h2>The game has finished!</h2> : null}
       </div>
     );
   }
