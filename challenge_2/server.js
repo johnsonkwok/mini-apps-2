@@ -17,5 +17,17 @@ app.get('/bpi', (req, res) => {
   });
 });
 
+app.get('/bpi/range', (req, res) => {
+  const startDate = req.query.start;
+  const endDate = req.query.end;
+  request.get(`https://api.coindesk.com/v1/bpi/historical/close.json?start=${startDate}&end=${endDate}`, (err, response, body) => {
+    if (err) {
+      console.error(err);
+      res.sendStatus(500);
+    }
+    res.send(body);
+  });
+});
+
 app.listen(3000, () => console.log(`App listening on port 3000`))
 
