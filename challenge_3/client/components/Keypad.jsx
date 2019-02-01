@@ -1,15 +1,15 @@
 import React from 'react';
 
-const newBtn = (num, key) => {
-  return <button type="button" key={key}>{num}</button>;
+const newBtn = (num, key, addPoints) => {
+  return <button type="button" key={key} value={num} onClick={addPoints}>{num}</button>;
 }
 
-const Keypad = () => {
+const Keypad = ({ addPoints }) => {
   return (
-    <div>
+    <div className="keypad">
       <div>Please select the number of pins hit for the current bowl.</div>
       {Array(10).fill(0).map((btn, idx) => {
-        return newBtn(idx + 1, idx);
+        return newBtn(idx + 1, idx, addPoints);
       })}
     </div>
   );
