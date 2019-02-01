@@ -15,7 +15,7 @@ const Chart = ({ chartData }) => {
       yAxes: [{
         scaleLabel: {
           display: true,
-          labelString: 'Closing Price ($)'
+          labelString: 'Closing Price ($ USD)'
         }
       }]
     }
@@ -24,7 +24,7 @@ const Chart = ({ chartData }) => {
     labels: labels,
     datasets: [{
       label: 'Bitcoin (BTC) Price',
-      backgroundColor: 'rgba(96,158,160,0.75)',
+      backgroundColor: 'rgba(96,158,160,0.5)',
       borderColor: 'darkblue',
       data: values    
     }]
