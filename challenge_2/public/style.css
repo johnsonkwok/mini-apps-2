@@ -1,0 +1,27 @@
+h1 {
+  color: darkgreen;
+}
+
+button {
+  position: relative;
+  float: right;
+  width: 80px;
+  height: 20px;
+  border: 1px solid teal;
+  border-radius: 25px;
+  margin-right: 15px;
+}
+
+body {
+  font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin-left: 30px;
+}
+
+.date-input {
+  margin: 0 10px 0 5px;
+}
+
+form {
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
