@@ -26,6 +26,7 @@ class App extends Component {
       gameComplete: false
     };
     this.addPoints = this.addPoints.bind(this);
+    this.startNewGame = this.startNewGame.bind(this);
   }
   
   addPoints(e) {
@@ -92,6 +93,29 @@ class App extends Component {
     }
   }
 
+  startNewGame() {
+    this.setState({
+      currentFrame: 1,
+      currentBall: 1,
+      score: {
+        1: [],
+        2: [],
+        3: [],
+        4: [],
+        5: [],
+        6: [],
+        7: [],
+        8: [],
+        9: [],
+        10: []
+      },
+      totalScore: 0,
+      currentPinsLeft: 10,
+      errorMsg: false,
+      gameComplete: false
+    });
+  }
+
   render() {
     return (
       <div>
@@ -99,6 +123,7 @@ class App extends Component {
         {this.state.errorMsg ? <h3>Please choose a valid number of pins hit.</h3> : null}
         <Scorecard score={this.state.score} totalScore={this.state.totalScore} />
         {this.state.gameComplete ? <h2>The game has finished!</h2> : null}
+        {this.state.gameComplete ? <button type="button" onClick={this.startNewGame}>New Game</button> : null}
       </div>
     );
   }
