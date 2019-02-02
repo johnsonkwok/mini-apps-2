@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  color: darkblue;
+}
+
+h2 {
+  color: green;
+}
+
+h3 {
+  color: red;
+  font-style: italic;
+}
+
+h4 {
+  color: cornflowerblue;
+}
+
+.keypad {
+  margin-bottom: 20px;
+}
+
+th {
+  border: 1px solid black;
+  width: 80px;
+}
+
+td {
+  text-align: center;
+}
+
+.total {
+  margin-top: 15px;
+  font-size: 25px;
+}
